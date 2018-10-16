@@ -1,0 +1,2 @@
+class ProjectedIncome < ApplicationRecord
+end

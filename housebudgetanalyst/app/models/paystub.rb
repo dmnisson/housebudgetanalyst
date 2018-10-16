@@ -1,0 +1,2 @@
+class Paystub < ApplicationRecord
+end
