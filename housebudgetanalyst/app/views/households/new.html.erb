@@ -1,0 +1,10 @@
+<% @title="New Household--House Budget Analyst" %>
+<h1>New Household</h1>
+
+<%= form_with scope: :household, url: households_path, local: true do |form| %>
+<p>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</p>
+<p><%= form.submit %>
+<% end %>
