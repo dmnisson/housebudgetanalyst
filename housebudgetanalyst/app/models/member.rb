@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
+   validates :name, presence: true
    belongs_to :household
    has_many :expense_records
    has_many :projected_expenses

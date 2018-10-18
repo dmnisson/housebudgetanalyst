@@ -16,7 +16,7 @@ class HouseholdsController < ApplicationController
   def show
     @household = Household.find(params[:id])
     @group = Group.find(@household.group_id)
-#    @expense_records = ExpenseRecord.where("household_id = ?", params[:id])
+    @members = Member.where("household_id = ?", params[:id])
   end
  
   private

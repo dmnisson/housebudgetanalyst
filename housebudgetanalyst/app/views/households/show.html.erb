@@ -1,6 +1,14 @@
 <h1><%= @household.name %></h1>
 <p>of group <%= @group.name %></p>
-<h2>Recorded Expenses</h2>
-<p>
-</p>
+<h2>Members<h2>
+<table>
+<tr>
+  <th>Name</th>
+</tr>
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.name %></td>
+  </tr>
+<% end %>
+</table>
 
