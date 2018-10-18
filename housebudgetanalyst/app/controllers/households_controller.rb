@@ -1,5 +1,6 @@
 class HouseholdsController < ApplicationController
   def new
+    @household = Household.new
   end
 
   def create
@@ -7,6 +8,8 @@ class HouseholdsController < ApplicationController
     
     @household.save!
     redirect_to @household
+  rescue
+    render 'households/new'
   end
 
   def index

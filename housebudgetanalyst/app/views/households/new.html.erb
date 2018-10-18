@@ -2,6 +2,16 @@
 <h1>New Household</h1>
 
 <%= form_with scope: :household, url: households_path, local: true do |form| %>
+<% if @household.errors.any? %>
+  <div id="error-block">
+    <h2><%= pluralize(@household.errors.count, "problem") %></h2>
+    <ul>
+    <% @household.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <p>
   <%= form.label :group %><br>
   <%= form.select :group_id, options_for_select(Group.all.map{|g|[g.name, g.id]}) %>
