@@ -3,7 +3,11 @@
 
 <%= form_with scope: :household, url: households_path, local: true do |form| %>
 <p>
-  <%= form.label :name %>
+  <%= form.label :group %><br>
+  <%= form.select :group_id, options_for_select(Group.all.map{|g|[g.name, g.id]}) %>
+</p>
+<p>
+  <%= form.label :name %><br>
   <%= form.text_field :name %>
 </p>
 <p><%= form.submit %>

@@ -5,7 +5,7 @@ class HouseholdsController < ApplicationController
   def create
     @household = Household.new(household_params)
     
-    @household.save
+    @household.save!
     redirect_to @household
   end
 
@@ -15,10 +15,12 @@ class HouseholdsController < ApplicationController
 
   def show
     @household = Household.find(params[:id])
+    @group = Group.find(@household.group_id)
+#    @expense_records = ExpenseRecord.where("household_id = ?", params[:id])
   end
  
   private
     def household_params
-       params.require(:household).permit(:name)
+       params.require(:household).permit(:group_id, :name)
     end
 end
